@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category Form</title>
+</head>
+<body>
+<div th:insert="~{fragments/header}"></div>
+    <form th:action="@{/admin/categories/save}" method="post">
+        <label>Category Name</label>
+        <input type="hidden" th:value="${category.isEdit}" name="isEdit">
+        <input type="hidden" th:value="${category.id}" name="id">
+        <input type="text" name="name" th:value="${category.name}"><br>
+
+        <label>Image</label>
+        <input type="text" name="image" th:value="${category.image}"><br>
+
+        <label>Status</label>
+        <input type="text" name="status" th:value="${category.status}"><br>
+
+        <div th:if="${category.isEdit}">
+            <input type="submit" value="Update">
+        </div>
+        <div th:if="${!category.isEdit}">
+            <input type="submit" value="Insert">
+        </div>
+    </form>
+        <div th:insert="~{fragments/footer}"></div>
+</body>
+</html>

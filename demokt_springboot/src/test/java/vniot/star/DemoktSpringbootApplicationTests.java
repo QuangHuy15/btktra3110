@@ -1,0 +1,13 @@
+package vniot.star;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class DemoktSpringbootApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
